@@ -1,0 +1,5 @@
+For now there is no need of service worker js file
+pub-pvt.js from this file only get_secret function is used in entire project
+created utility.js moving all functions to this.
+
+I have completed the BiddingEmporium and AuctionSetup, utility.js files now I have to work on new files
