@@ -86,12 +86,13 @@ export const confirmDelivery = async (auction_id, type, state) => {
 };
     
 
-export const makeBid = async (auction_id, type, price, state) => {
-  const { blind_contract, vickrey_contract, average_contract, currentAccount, web3, SubmissionData, market } = state;
+export const makeBid = async (auction_id, type, price, contracts) => {
+  const { blind_contract, vickrey_contract, average_contract, currentAccount, web3, SubmissionData, market } = contracts;
   try {
     if (type === "Normal Listing") {
       const { publickey } = SubmissionData;
       console.log(publickey,"publickey")
+      console.log(auction_id,"auction_d")
       await market.methods.requestBuy(auction_id, publickey)
         .send({
           from: currentAccount,

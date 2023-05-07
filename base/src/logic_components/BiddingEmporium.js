@@ -19,6 +19,7 @@ class AuctionHouse extends Component {
       DecodedData: null
     }
     this.handleChange = this.handleChange.bind(this);
+    this.makeBid = this.makeBid.bind(this);
     this.sellItem = this.sellItem.bind(this);
     this.verify = this.verify.bind(this);
     this.revealBid = this.revealBid.bind(this);
@@ -129,6 +130,20 @@ class AuctionHouse extends Component {
       alert(`Sell Item Error: ${error}`);
     }
   };
+  makeBid = (auction_id, type, price) => async (e) => {
+    console.log("in makebid");
+    try {
+      const { blind_contract, vickrey_contract, average_contract, currentAccount, web3, SubmissionData, market } = this.state
+      console.log(blind_contract,"blind");
+      const contracts = { blind_contract, vickrey_contract, average_contract, currentAccount, web3, SubmissionData, market}
+
+      this.setState({makeBid: !this.state.makeBid});
+      await makeBid(auction_id, type, price, contracts);
+    }catch(error){
+      alert(`error in makebid:${error}`);
+    }
+
+  }
 
   handleChange(e) {
     e.preventDefault();
@@ -255,7 +270,7 @@ class AuctionHouse extends Component {
                               <InputGroup>
                                 <input type="string" className="form-control" id="publickey" required onChange={this.handleChange} placeholder="Public Key" />
                               </InputGroup>
-                              <Button variant="primary" onClick={()=>makeBid(ItemDirectory.new_auction_id, ItemDirectory.type, ItemDirectory.price, this.state)}>Buy Item</Button>
+                              <Button variant="primary" onClick={this.makeBid(ItemDirectory.new_auction_id, ItemDirectory.type, ItemDirectory.price)}>Buy Item</Button>
                             </>
                             :
                             // Requested to Buy
@@ -307,10 +322,8 @@ class AuctionHouse extends Component {
                                     <input type="number" className="form-control" id="deposit" required onChange={this.handleChange} placeholder="Deposit Amount (>2*Bid Amount)" />
                                     <input type="string" className="form-control" id="publickey" required onChange={this.handleChange} placeholder="Public Key" />
                                   </InputGroup>
-                                  <Button variant="primary" onClick={(e) => {
-                                    e.preventDefault();
-                                    makeBid(ItemDirectory.new_auction_id, ItemDirectory.type, ItemDirectory.price, this.state);
-                                  }}>Buy Item</Button>
+                                  <Button variant="primary" onClick={this.makeBid(ItemDirectory.new_auction_id, ItemDirectory.type, ItemDirectory.price, this.state)
+                                  }>Buy Item</Button>
                                 </>
                               }
                             </>

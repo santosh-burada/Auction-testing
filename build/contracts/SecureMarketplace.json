@@ -245,7 +245,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -258,7 +259,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -277,7 +279,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -300,7 +303,8 @@
       "name": "createListings",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [],
@@ -370,7 +374,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -440,7 +445,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -458,7 +464,8 @@
       "name": "requestBuy",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -476,7 +483,8 @@
       "name": "sellItem",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -489,7 +497,8 @@
       "name": "confirmDelivery",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -24675,12 +24684,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x0cEBEfF2cE5F47e2e9D3C45B479Ce9D38d87355a",
-      "transactionHash": "0xdf3aac51c81a85af3fd90111d913c98e4cd21e3ae93bc61ec193670847df5037"
+      "address": "0x16269D196C303e49a298609fa0fC7d3eF7e2833c",
+      "transactionHash": "0x059f9ed7b2a421bc390cd7d3c68cd1d39da93c38b33181b3d73a4383e32c3e5d"
     }
   },
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-05-07T03:17:01.470Z",
+  "updatedAt": "2023-05-07T04:12:23.477Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

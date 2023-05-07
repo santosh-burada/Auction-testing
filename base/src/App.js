@@ -63,11 +63,12 @@ class App extends Component {
 
       // Use web3 to get the user's accounts.
       const accounts = await web3.eth.getAccounts();
-      // console.log(accounts);
+      console.log(accounts);
       // Get the contract instances.
       const networkId = await web3.eth.net.getId();
-
+      console.log(networkId)
       const deployedNetwork1 = VikreyAuction.networks[networkId];
+      console.log(deployedNetwork1)
       const instance1 = await new web3.eth.Contract(
         VikreyAuction.abi,
         deployedNetwork1 && deployedNetwork1.address,
