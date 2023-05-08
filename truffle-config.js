@@ -45,6 +45,13 @@
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
 // const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+//
+// const fs = require('fs');
+// const mnemonic = fs.readFileSync(".secret").toString().trim();
+
+//provide ur private key
+const privatekey = ''
 
 module.exports = {
   /**
@@ -69,6 +76,10 @@ module.exports = {
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: "5777",       // Any network (default: none)
     },
+    goerli: {
+          provider: () => new HDWalletProvider(privatekey, "provide ur api key"),
+          network_id: '5',
+    }
     //
     // An additional network, but with some advanced options…
     // advanced: {
