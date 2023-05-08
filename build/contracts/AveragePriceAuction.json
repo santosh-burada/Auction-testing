@@ -353,8 +353,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -382,8 +381,7 @@
       "name": "auctionItem",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -443,8 +441,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -529,8 +526,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -553,8 +549,7 @@
       "name": "bid",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -577,8 +572,7 @@
       "name": "reveal",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -609,8 +603,7 @@
       "name": "sellItem",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -623,8 +616,7 @@
       "name": "confirmDelivery",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"highestBidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"highestBid\",\"type\":\"uint256\"}],\"name\":\"AuctionEnded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"item_name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"item_description\",\"type\":\"string\"}],\"name\":\"AuctionStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"name\":\"BalanceRefunded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"}],\"name\":\"BidMade\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"}],\"name\":\"BidRevealFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"}],\"name\":\"BidRevealed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bid_value\",\"type\":\"uint256\"}],\"name\":\"BidderRefunded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Auction_id\",\"type\":\"uint256\"}],\"name\":\"BiddingPeriodEnded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bidding_end\",\"type\":\"uint256\"}],\"name\":\"BiddingStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"}],\"name\":\"DepositNotEnough\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"encryptedKey\",\"type\":\"string\"}],\"name\":\"EncryptedKey\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"}],\"name\":\"ItemUnsold\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bid_value\",\"type\":\"uint256\"}],\"name\":\"NewHighestBid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Auction_id\",\"type\":\"uint256\"}],\"name\":\"RevealPeriodEnded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reveal_end\",\"type\":\"uint256\"}],\"name\":\"RevealPeriodStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Auction_id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"winner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"pubkey\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"winning_bid\",\"type\":\"uint256\"}],\"name\":\"WinnerChosen\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"}],\"name\":\"deliveryComplete\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"}],\"name\":\"auctionEnd\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"item_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"item_description\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"bidding_time\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"reveal_time\",\"type\":\"uint256\"}],\"name\":\"auctionItem\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"blindedBid\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"pubkey\",\"type\":\"string\"}],\"name\":\"bid\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"}],\"name\":\"confirmDelivery\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"getAccountBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"accountBalance\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getactiveauctions\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"biddingEnd\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revealEnd\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"ended\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"item_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"item_description\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"bidplaced\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"revealed\",\"type\":\"bool\"}],\"internalType\":\"struct AverageAuctionDefinitions.auction_active_listings[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getallauctions\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"internalType\":\"address payable\",\"name\":\"winner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"biddingEnd\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"revealEnd\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"ended\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"sold\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"item_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"item_description\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"bidplaced\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"revealed\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"finalBid\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"pubkey\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"encryptedKey\",\"type\":\"string\"}],\"internalType\":\"struct AverageAuctionDefinitions.auction_all_listings[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"secret\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"}],\"name\":\"reveal\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"auction_id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"encryptedKey\",\"type\":\"string\"}],\"name\":\"sellItem\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"confirmDelivery(uint256)\":{\"details\":\"Confirmation of deliveryTransaction from the winner\",\"params\":{\"auction_id\":\"is the id of the item being sold_\"}},\"sellItem(uint256,string)\":{\"details\":\"Sale of item from seller's sideTransaction from the sellerassume the seller is fair,will provide the right item\",\"params\":{\"auction_id\":\"is the id of the item being sold_\",\"encryptedKey\":\"is the unique string for the item\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/AveragePriceAuction.sol\":\"AveragePriceAuction\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/AverageAuctionDefinitions.sol\":{\"keccak256\":\"0xbcdd1b6f8801581f30d70ee0ea3659c3acbfbc9c616f09d852f1cea6a51d990d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://01a6ef851922b32fbe194c7f12db1223761a66a4a0eb20743f3758b7a0bd9f34\",\"dweb:/ipfs/QmebA1TXuiybom1KbSyYvJaP2CabYheMAGENFS6YhSZAsi\"]},\"project:/contracts/AveragePriceAuction.sol\":{\"keccak256\":\"0x14a3b5c56630f87fd524cb71d5e3975d00ccfaeb7121389cc76673cdcaa10737\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://561d178cab25592f5bd6b55599d406a0d7aced85bd4d9cad82c79f4d98575ac8\",\"dweb:/ipfs/Qmc2qiKPcEBan29ckQuZdtbQUJw9WGcRRGsx5RFGFiYW4x\"]}},\"version\":1}",
@@ -37979,8 +37971,7 @@
     }
   },
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-05-07T04:12:23.450Z",
-  "networkType": "ethereum",
+  "updatedAt": "2023-05-07T18:48:13.802Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

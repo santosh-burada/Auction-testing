@@ -93,11 +93,14 @@ export const makeBid = async (auction_id, type, price, contracts) => {
       const { publickey } = SubmissionData;
       console.log(publickey,"publickey")
       console.log(auction_id,"auction_d")
+      
+     
       await market.methods.requestBuy(auction_id, publickey)
         .send({
           from: currentAccount,
           value: price * 2
         });
+        
     } else {
       const { value, secret_key, deposit, publickey } = SubmissionData;
       if (type === "Blind Auction") {

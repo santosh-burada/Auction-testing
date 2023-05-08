@@ -48,7 +48,7 @@ class CreateAuctions extends Component {
       vickreyAuctionInstance: this.state.vickrey_contract,
       averageAuctionInstance: this.state.average_contract
       };
-      await initiateAuction(this.state.formData, contracts, this.state.web3);
+      
   };
 
 

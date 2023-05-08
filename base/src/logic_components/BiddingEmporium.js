@@ -23,8 +23,10 @@ class AuctionHouse extends Component {
     this.sellItem = this.sellItem.bind(this);
     this.verify = this.verify.bind(this);
     this.revealBid = this.revealBid.bind(this);
+
   }
   componentDidMount = async () => {
+    
     try {
       this.setState({
         vickrey_contract: this.props.vickrey_contract,
@@ -130,13 +132,23 @@ class AuctionHouse extends Component {
       alert(`Sell Item Error: ${error}`);
     }
   };
+
+  fetchCurrentListingId = async () => {
+    try {
+      const currentListingId = await this.state.market.methods.getCurrentListingId().call({ from: this.props.currentAccount });
+      console.log("Current Listing ID:", currentListingId);
+    } catch (error) {
+      console.error("Error fetching current listing ID:", error);
+    }
+  }
+  
+
   makeBid = (auction_id, type, price) => async (e) => {
     console.log("in makebid");
     try {
       const { blind_contract, vickrey_contract, average_contract, currentAccount, web3, SubmissionData, market } = this.state
       console.log(blind_contract,"blind");
       const contracts = { blind_contract, vickrey_contract, average_contract, currentAccount, web3, SubmissionData, market}
-
       this.setState({makeBid: !this.state.makeBid});
       await makeBid(auction_id, type, price, contracts);
     }catch(error){

@@ -3,7 +3,7 @@ pragma solidity >=0.4.22 <0.9.0;
 pragma experimental ABIEncoderV2;
 
 contract ListingBase {
-    uint256 currentListingId = 0;
+    
     uint256 public activeListings = 0;
 
     struct Bid {
@@ -50,19 +50,10 @@ contract ListingBase {
     event EncryptedKey(uint256 indexed id, string encryptedKey);
     event PurchaseComplete(Listing list);
     event Aborted();
-
+    event AuctionStarted(address winner, uint256 highestBid);
+    event AuctionEnded(address winner, uint256 highestBid);
     modifier condition(bool _condition) {
         require(_condition);
-        _;
-    }
-
-
-
-    modifier validListing(uint256 id) {
-        require(
-            id < currentListingId && id >= 0,
-            "Invalid Listing Id"
-        );
         _;
     }
 

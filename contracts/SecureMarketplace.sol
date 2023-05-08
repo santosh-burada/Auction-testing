@@ -5,13 +5,22 @@ pragma experimental ABIEncoderV2;
 import "./ListingBase.sol";
 
 contract SecureMarketplace is ListingBase {
-
+    uint256 currentListingId = 0;
     mapping(uint256 => Listing) private listings;
 
     modifier validBuyer(uint256 id) {
         require(
             listings[id].beneficiary != msg.sender,
             "Invalid Buyer"
+        );
+        _;
+    }
+
+    
+    modifier validListing(uint256 id) {
+        require(
+            id < currentListingId && id >= 0,
+            "Invalid Listing Id"
         );
         _;
     }
@@ -98,6 +107,10 @@ function fetchAllListings() external view returns (Listing[] memory) {
     return allListings;
 }
 
+function getCurrentListingId() external view returns (uint256) {
+    return currentListingId;
+}
+
 function requestBuy(uint256 id, string calldata publicKey)
     external
     payable
@@ -124,7 +137,10 @@ function requestBuy(uint256 id, string calldata publicKey)
     listings[id].buyerAssigned = true;
     listings[id].publicKey = publicKey;
     emit PurchaseRequested(listings[id], msg.sender, publicKey);
+
+   
 }
+
 
 function sellItem(uint256 id, string calldata encryptedKey)
     external
