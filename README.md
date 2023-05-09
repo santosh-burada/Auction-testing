@@ -1,4 +1,9 @@
 
+# Blind Auction Screenshot
+
+![Screenshot (31)](https://user-images.githubusercontent.com/55043057/236997808-da153d5b-9bc8-4924-91d2-97fab0a8a117.png)
+
+
 # All Auctions
 
 # functionalities 
