@@ -10,10 +10,10 @@ class Navbr extends Component{
   render() {
     return(
     <>
-      <Navbar bg="dark" variant="dark" sticky="top">
+      <Navbar bg="#73cbd9" variant="dark" sticky="top">
       <Container>
         <Link to="/">
-          <Navbar.Brand>Tripple Auction
+          <Navbar.Brand>Smart Auction
           </Navbar.Brand>
         </Link>
         <Link to="/auctionhouse">

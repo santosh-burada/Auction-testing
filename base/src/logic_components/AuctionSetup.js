@@ -101,7 +101,7 @@ class CreateAuctions extends Component {
                 }
               </>
             }
-            <Button type="submit">Create Auction</Button>
+            <Button variant="dark" type="submit">Create Auction</Button>
           </form>
         </div>
       </>

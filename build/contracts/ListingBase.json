@@ -998,7 +998,7 @@
   "sourceMap": "104:1761:4:-:0;;;170:1;138:33;;104:1761;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "104:1761:4:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;722:18;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;138:33;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;722:18;;;;;;;;;;;;;:::o;138:33::-;;;;:::o;7:180:9:-;55:77;52:1;45:88;152:4;149:1;142:15;176:4;173:1;166:15;193:115;276:1;269:5;266:12;256:46;;282:18;;:::i;:::-;256:46;193:115;:::o;314:131::-;361:7;390:5;379:16;;396:43;433:5;396:43;:::i;:::-;314:131;;;:::o;451:::-;509:9;542:34;570:5;542:34;:::i;:::-;529:47;;451:131;;;:::o;588:147::-;683:45;722:5;683:45;:::i;:::-;678:3;671:58;588:147;;:::o;741:238::-;842:4;880:2;869:9;865:18;857:26;;893:79;969:1;958:9;954:17;945:6;893:79;:::i;:::-;741:238;;;;:::o;985:77::-;1022:7;1051:5;1040:16;;985:77;;;:::o;1068:118::-;1155:24;1173:5;1155:24;:::i;:::-;1150:3;1143:37;1068:118;;:::o;1192:222::-;1285:4;1323:2;1312:9;1308:18;1300:26;;1336:71;1404:1;1393:9;1389:17;1380:6;1336:71;:::i;:::-;1192:222;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\npragma experimental ABIEncoderV2;\r\n\r\ncontract ListingBase {\r\n    \r\n    uint256 public activeListings = 0;\r\n\r\n    struct Bid {\r\n        bytes32 bidHash;\r\n        uint256 bidAmount;\r\n    }\r\n\r\n    struct Listing {\r\n        uint256 id;\r\n        address payable beneficiary;\r\n        address payable buyer;\r\n        uint256 price;\r\n        string item_name;\r\n        string item_description;\r\n        bool sold_or_withdrawn;\r\n        bool buyerAssigned;\r\n        string publicKey;\r\n        string encryptedKey;\r\n        State state;\r\n    }\r\n\r\n    enum State {\r\n        Created,\r\n        Active,\r\n        Sold,\r\n        Delivered,\r\n        Inactive\r\n    }\r\n    State public state;\r\n\r\n    event ListingCreated(\r\n        uint256 indexed id,\r\n        address beneficiary,\r\n        uint256 price,\r\n        string item_name,\r\n        string item_description\r\n    );\r\n    event ListingChanged(address indexed beneficiary, uint256 indexed index);\r\n    event PurchaseRequested(\r\n        Listing list,\r\n        address indexed buyer,\r\n        string pubKey\r\n    );\r\n    event EncryptedKey(uint256 indexed id, string encryptedKey);\r\n    event PurchaseComplete(Listing list);\r\n    event Aborted();\r\n    event AuctionStarted(address winner, uint256 highestBid);\r\n    event AuctionEnded(address winner, uint256 highestBid);\r\n    modifier condition(bool _condition) {\r\n        require(_condition);\r\n        _;\r\n    }\r\n\r\n    modifier onlyBefore(uint256 _time) {\r\n        require(block.timestamp < _time);\r\n        _;\r\n    }\r\n    modifier onlyAfter(uint256 _time) {\r\n        require(block.timestamp > _time);\r\n        _;\r\n    }\r\n\r\n    modifier validString(string memory str) {\r\n        require(\r\n            bytes(str).length <= 50,\r\n            \"String Length is 50 characters maximum\"\r\n        );\r\n        _;\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\Users\\Santosh_Burada\\Desktop\\Spring\\Subjects\\Blockchain\\Testing\\contracts\\ListingBase.sol",
+  "sourcePath": "C:\\Users\\katam\\Documents\\Auction-testing\\contracts\\ListingBase.sol",
   "ast": {
     "absolutePath": "project:/contracts/ListingBase.sol",
     "exportedSymbols": {
@@ -2856,7 +2856,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-05-07T18:48:14.010Z",
+  "updatedAt": "2023-05-09T04:59:31.017Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
